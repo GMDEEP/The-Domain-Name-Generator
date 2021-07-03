@@ -10,22 +10,19 @@ window.onload = function() {
   let pronoun = ["the", "our"];
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
-  let extensions = [".com", ".net", ".us", ".io", ".etc"];
+  let extension = [".com", ".net", ".io", ".us"];
 
-  const randomIndex = lengthOfArray => {
-    return Math.floor(Math.random() * lengthOfArray);
-  };
-
-  console.log(pronoun[randomIndex(pronoun.length)]);
-  console.log(adj[randomIndex(adj.length)]);
-  console.log(noun[randomIndex(noun.length)]);
-  console.log(extensions[randomIndex(extensions.length)]);
-  document.getElementById("The Domain Name Generator").innerHTML =
-    pronoun[randomIndex(pronoun.length)] +
-    " " +
-    adj[randomIndex(adj.length)] +
-    " " +
-    noun[randomIndex(noun.length)] +
-    " " +
-    extensions[randomIndex(extensions.length)];
+  for (let index = 0; index < pronoun.length; index++) {
+    const element = pronoun[index];
+    for (let index = 0; index < adj.length; index++) {
+      let secondElement = element + adj[index];
+      for (let index = 0; index < noun.length; index++) {
+        let thirdElement = secondElement + noun[index];
+        for (let index = 0; index < extension.length; index++) {
+          let forthElement = thirdElement + extension[index];
+          console.log(forthElement);
+        }
+      }
+    }
+  }
 };
